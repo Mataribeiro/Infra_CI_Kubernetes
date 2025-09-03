@@ -9,6 +9,9 @@ module "eks" {
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.public_subnets
 
+  enable_gpu_support              = false
+  enable_inference_support        = false
+
   eks_managed_node_groups = {
     alura = {
       min_size     = 1
